@@ -5,22 +5,19 @@ import software.bernie.example.item.JackInTheBoxItem;
 import software.bernie.geckolib3.GeckoLib;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class GremlinModel extends AnimatedGeoModel<JackInTheBoxItem> {
+public class GremlinModel extends AnimatedGeoModel {
     @Override
-    public ResourceLocation getModelLocation(JackInTheBoxItem object)
-    {
-        return new ResourceLocation(GeckoLib.ModID, "geo/gremlin_entity.geo.json");
+    public ResourceLocation getModelLocation(Object entity) {
+        return new ResourceLocation(GeckoLib.ModID, "geo/gremlin.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(JackInTheBoxItem object)
-    {
-        return new ResourceLocation(GeckoLib.ModID, "textures/entity/gremlin_entity.png");
+    public ResourceLocation getTextureLocation(Object entity) {
+        return new ResourceLocation(GeckoLib.ModID, "textures/entity/gremlin.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(JackInTheBoxItem object)
-    {
-        return new ResourceLocation(GeckoLib.ModID, "animations/jackinthebox.animation.json");
+    public ResourceLocation getAnimationFileLocation(Object entity) {
+        return new ResourceLocation(GeckoLib.ModID, "animations/gremlin.animation.json");
     }
 }

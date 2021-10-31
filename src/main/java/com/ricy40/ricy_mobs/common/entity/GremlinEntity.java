@@ -27,7 +27,7 @@ public class GremlinEntity extends CreatureEntity implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bat.fly", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gremlin.walk", true));
         return PlayState.CONTINUE;
     }
 
