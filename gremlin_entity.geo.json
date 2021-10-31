@@ -1,0 +1,84 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.gremlin_entity",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "mainbody",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 4, -2], "size": [6, 6, 4], "uv": [0, 10]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "mainbody",
+					"pivot": [0, 10, 0],
+					"cubes": [
+						{"origin": [2, 13, 0], "size": [3, 3, 0], "pivot": [3, 14, 0], "rotation": [-22.5, 0, 10], "uv": [0, 0]},
+						{"origin": [-5, 13, 0], "size": [3, 3, 0], "pivot": [-3, 14, 0], "rotation": [-22.5, 0, -10], "uv": [0, 3]},
+						{"origin": [-3, 10, -3], "size": [6, 4, 6], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "topjaw",
+					"parent": "head",
+					"pivot": [0, 10.5, -3],
+					"cubes": [
+						{"origin": [-2, 10.5, -5], "size": [4, 1, 2], "uv": [16, 10]},
+						{"origin": [-2, 9.5, -4.9], "size": [4, 1, 0], "uv": [16, 13]}
+					]
+				},
+				{
+					"name": "bottomjaw",
+					"parent": "head",
+					"pivot": [0, 10.5, -3],
+					"cubes": [
+						{"origin": [-2, 10.5, -4.9], "size": [4, 1, 0], "uv": [18, 3]},
+						{"origin": [-2, 9.5, -5], "size": [4, 1, 2], "uv": [18, 0]}
+					]
+				},
+				{
+					"name": "leftarm",
+					"parent": "mainbody",
+					"pivot": [3, 9, 0],
+					"cubes": [
+						{"origin": [3, 3, -1], "size": [2, 7, 2], "uv": [18, 18]}
+					]
+				},
+				{
+					"name": "rightarm",
+					"parent": "mainbody",
+					"pivot": [-3, 9, 0],
+					"cubes": [
+						{"origin": [-5, 3, -1], "size": [2, 7, 2], "uv": [0, 20]}
+					]
+				},
+				{
+					"name": "leftleg",
+					"parent": "mainbody",
+					"pivot": [2, 4, 0],
+					"cubes": [
+						{"origin": [1, 0, -1], "size": [2, 5, 2], "uv": [8, 20]}
+					]
+				},
+				{
+					"name": "rightleg",
+					"parent": "mainbody",
+					"pivot": [-2, 4, 0],
+					"cubes": [
+						{"origin": [-3, 0, -1], "size": [2, 5, 2], "uv": [24, 3]}
+					]
+				}
+			]
+		}
+	]
+}
