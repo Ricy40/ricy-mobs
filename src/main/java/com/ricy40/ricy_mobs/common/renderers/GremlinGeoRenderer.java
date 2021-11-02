@@ -5,8 +5,8 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import software.bernie.example.entity.GeoExampleEntity;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class GremlinRenderer extends GeoEntityRenderer<GeoExampleEntity> {
-    public GremlinRenderer(EntityRendererManager renderManager) {
+public class GremlinGeoRenderer extends GeoEntityRenderer<GeoExampleEntity> {
+    public GremlinGeoRenderer(EntityRendererManager renderManager) {
         super(renderManager, new GremlinModel());
         this.shadowRadius = 0.7F; //change 0.7 to the desired shadow size.
     }

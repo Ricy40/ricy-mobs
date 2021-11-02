@@ -18,6 +18,6 @@ public class GremlinModel extends AnimatedGeoModel {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Object entity) {
-        return new ResourceLocation(GeckoLib.ModID, "animations/gremlin.animation.json");
+        return new ResourceLocation(GeckoLib.ModID, "animations/gremlin.animationF.json");
     }
 }
