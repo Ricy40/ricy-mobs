@@ -26,9 +26,12 @@ import javax.annotation.Nullable;
 public class GremlinEntity extends AnimalEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gremlin.walk", true));
-        return PlayState.CONTINUE;
+        if (event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
+        }
     }
 
     public GremlinEntity(EntityType<? extends AnimalEntity> type, World worldIn) {

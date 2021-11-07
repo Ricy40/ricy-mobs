@@ -16,8 +16,10 @@ public class EntityTypeInit {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, RicyMobs.MOD_ID);
 
-    public static final RegistryObject<EntityType<?>> GREMLIN = ENTITIES.register("gremlin",
+
+    public static final RegistryObject<EntityType<GremlinEntity>> IMP = ENTITIES.register("gremlin",
             () -> EntityType.Builder.of(GremlinEntity::new, EntityClassification.CREATURE)
-                    .sized(1.0f, 1.0f)
+                    .sized(0.6f, 1.95F)
+                    .clientTrackingRange(9)
                     .build(new ResourceLocation(RicyMobs.MOD_ID, "gremlin").toString()));
 }

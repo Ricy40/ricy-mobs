@@ -1,11 +1,14 @@
 package com.ricy40.ricy_mobs.common.models;
 
 import net.minecraft.util.ResourceLocation;
-import software.bernie.example.item.JackInTheBoxItem;
 import software.bernie.geckolib3.GeckoLib;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class GremlinModel extends AnimatedGeoModel {
+
+    public GremlinModel() {
+    }
+
     @Override
     public ResourceLocation getModelLocation(Object entity) {
         return new ResourceLocation(GeckoLib.ModID, "geo/gremlin.geo.json");
