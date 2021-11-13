@@ -1,12 +1,18 @@
 package com.ricy40.ricy_mobs;
 
+import com.ricy40.ricy_mobs.common.entity.render.GremlinGeoRenderer;
 import com.ricy40.ricy_mobs.core.init.*;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -29,13 +35,18 @@ public class RicyMobs {
         ParticleInit.PARTICLES.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
-        EntityTypeInit.ENTITIES.register(bus);
+        EntityTypeInit.ENTITY_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+    }
 
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public static void registerRenderers(final FMLClientSetupEvent event) {
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypeInit.GREMLIN.get(), manager -> new GremlinGeoRenderer(manager));
     }
 
     public static class RicyMobsGroup extends ItemGroup {

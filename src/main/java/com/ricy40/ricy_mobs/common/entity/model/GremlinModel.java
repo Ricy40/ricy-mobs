@@ -1,4 +1,4 @@
-package com.ricy40.ricy_mobs.common.models;
+package com.ricy40.ricy_mobs.common.entity.model;
 
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.GeckoLib;
