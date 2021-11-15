@@ -14,6 +14,6 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class GremlinGeoRenderer extends GeoEntityRenderer<GremlinEntity> {
     public GremlinGeoRenderer(EntityRendererManager renderManager) {
         super(renderManager, new GremlinModel());
-        this.shadowRadius = 0.7F;
+        this.shadowRadius = 0.3F;
     }
 }

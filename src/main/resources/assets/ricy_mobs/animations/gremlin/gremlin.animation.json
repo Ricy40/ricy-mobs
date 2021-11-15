@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.gremlin_entity.walk": {
+		"animation.gremlin.walk": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
@@ -93,7 +93,7 @@
 				}
 			}
 		},
-		"animation.gremlin_entity.jump": {
+		"animation.gremlin.jump": {
 			"animation_length": 2.83333,
 			"bones": {
 				"mainbody": {
@@ -356,7 +356,7 @@
 				}
 			}
 		},
-		"animation.gremlin_entity.idle": {
+		"animation.gremlin.idle": {
 			"animation_length": 4.58333,
 			"bones": {
 				"head": {

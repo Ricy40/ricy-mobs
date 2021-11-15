@@ -30,6 +30,7 @@ public class RicyMobs {
         GeckoLib.initialize();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
+        bus.addListener(this::registerRenderers);
 
         SoundInit.SOUNDS.register(bus);
         ParticleInit.PARTICLES.register(bus);
@@ -43,9 +44,8 @@ public class RicyMobs {
     private void setup(final FMLCommonSetupEvent event) {
     }
 
-    @OnlyIn(Dist.CLIENT)
-    @SubscribeEvent
-    public static void registerRenderers(final FMLClientSetupEvent event) {
+    public void registerRenderers(final FMLClientSetupEvent event) {
+
         RenderingRegistry.registerEntityRenderingHandler(EntityTypeInit.GREMLIN.get(), manager -> new GremlinGeoRenderer(manager));
     }
 
