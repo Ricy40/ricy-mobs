@@ -355,6 +355,29 @@
 					}
 				}
 			}
+		},
+		"animation.gremlin_entity.idle": {
+			"animation_length": 4.58333,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2917": {
+							"vector": [0, 27.5, 0],
+							"easing": "easeOutBack"
+						},
+						"0.7083": {
+							"vector": [0, -22.5, 0]
+						},
+						"1.2917": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack"
+						}
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2
