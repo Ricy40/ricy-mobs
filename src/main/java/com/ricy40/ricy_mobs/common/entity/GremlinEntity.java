@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.monster.ZombifiedPiglinEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,7 +31,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import javax.annotation.Nullable;
 
 
-public class GremlinEntity extends AnimalEntity implements IAnimatable {
+public class GremlinEntity extends CreatureEntity implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
@@ -70,13 +71,9 @@ public class GremlinEntity extends AnimalEntity implements IAnimatable {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new SwimGoal(this));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(ZombifiedPiglinEntity.class));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, IronGolemEntity.class, true));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, 10, true, false, TurtleEntity.BABY_ON_LAND_SELECTOR));
-        this.targetSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
-        this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(GremlinEntity.class));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, FoxEntity.class, true));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
     }
 
     protected int getExperiencePoints(PlayerEntity player)
@@ -120,11 +117,5 @@ public class GremlinEntity extends AnimalEntity implements IAnimatable {
             }
             return true;
         }
-    }
-
-    @Nullable
-    @Override
-    public AgeableEntity getBreedOffspring(ServerWorld worldIn, AgeableEntity entityIn) {
-        return null;
     }
 }
